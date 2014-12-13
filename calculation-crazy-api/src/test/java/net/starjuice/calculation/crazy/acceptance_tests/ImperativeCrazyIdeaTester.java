@@ -15,21 +15,21 @@ public class ImperativeCrazyIdeaTester implements ImperativeTestProvider {
     }
 
     @Override
-    public void add_numbers(int a, int b) {
+    public void make_calculator_add_two_numbers(int a, int b) {
         calculator.number(a);
         calculator.plus();
         calculator.number(b);
     }
 
     @Override
-    public void subtract_subtrahend_from_minuend(int subtrahend, int minuend) {
+    public void make_calculator_subtract_one_number_from_another(int subtrahend, int minuend) {
         calculator.number(minuend);
         calculator.minus();
         calculator.number(subtrahend);
     }
 
     @Override
-    public void check_result(int expected) {
+    public void check_calculated_value(int expected) {
         int actual = calculator.equal();
         Assert.assertEquals(expected, actual);
     }

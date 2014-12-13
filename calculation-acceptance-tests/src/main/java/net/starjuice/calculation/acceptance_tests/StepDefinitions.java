@@ -23,16 +23,16 @@ public class StepDefinitions {
 
     @When("^I make the calculator add two numbers (-?\\d+) and (-?\\d+)$")
     public void I_make_the_calculator_add_two_numbers_a_and_b(int a, int b) throws Throwable {
-        testProvider.add_numbers(a, b);
+        testProvider.make_calculator_add_two_numbers(a, b);
     }
 
     @When("^I make the calculator subtract (-?\\d+) from (-?\\d+)$")
     public void I_make_the_calculator_subtract_b_from_a(int subtrahend, int minuend) throws Throwable {
-        testProvider.subtract_subtrahend_from_minuend(subtrahend, minuend);
+        testProvider.make_calculator_subtract_one_number_from_another(subtrahend, minuend);
     }
 
     @Then("^the calculator gives me the answer (-?\\d+)$")
     public void the_calculator_gives_me_the_answer_sum(int expected) throws Throwable {
-        testProvider.check_result(expected);
+        testProvider.check_calculated_value(expected);
     }
 }

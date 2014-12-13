@@ -16,18 +16,18 @@ public class ImperativeApiTester implements ImperativeTestProvider {
     }
 
     @Override
-    public void add_numbers(int a, int b) {
+    public void make_calculator_add_two_numbers(int a, int b) {
         actual = calculator.add(a, b);
 
     }
 
     @Override
-    public void subtract_subtrahend_from_minuend(int subtrahend, int minuend) {
+    public void make_calculator_subtract_one_number_from_another(int subtrahend, int minuend) {
         actual = calculator.subtract(minuend, subtrahend);
     }
 
     @Override
-    public void check_result(int expected) {
+    public void check_calculated_value(int expected) {
         Assert.assertEquals(expected, actual);
     }
 }
