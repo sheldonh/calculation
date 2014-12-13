@@ -1,6 +1,6 @@
 Feature: Addition
 As a maths idiot
-I want to add numbers
+I want the sum of any two numbers
 So that I don't feel stupid
 
 Scenario Outline: Add two numbers

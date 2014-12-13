@@ -1,33 +1,36 @@
-package net.starjuice.calculation.api.acceptance_tests;
+package net.starjuice.calculation.crazy.acceptance_tests;
 
 import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
 import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
-import net.starjuice.calculation.api.Calculator;
+import net.starjuice.calculation.crazy.CrazyCalculator;
 import org.junit.Assert;
 
 @AcceptanceTestComponent
-public class ImperativeApiTester implements ImperativeTestProvider {
-    private Calculator calculator;
-    private int actual;
+public class ImperativeCrazyIdeaTester implements ImperativeTestProvider {
+    private CrazyCalculator calculator;
 
     @Override
     public void make_a_calculator() {
-        calculator = new Calculator();
+        calculator = new CrazyCalculator();
     }
 
     @Override
     public void add_numbers(int a, int b) {
-        actual = calculator.add(a, b);
-
+        calculator.number(a);
+        calculator.plus();
+        calculator.number(b);
     }
 
     @Override
     public void subtract_subtrahend_from_minuend(int subtrahend, int minuend) {
-        actual = calculator.subtract(minuend, subtrahend);
+        calculator.number(minuend);
+        calculator.minus();
+        calculator.number(subtrahend);
     }
 
     @Override
     public void check_result(int expected) {
+        int actual = calculator.equal();
         Assert.assertEquals(expected, actual);
     }
 }

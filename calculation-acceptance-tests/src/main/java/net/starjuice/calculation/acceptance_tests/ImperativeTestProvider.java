@@ -5,5 +5,7 @@ public interface ImperativeTestProvider {
 
     void add_numbers(int a, int b);
 
+    void subtract_subtrahend_from_minuend(int subtrahend, int minuend);
+
     void check_result(int expected);
 }

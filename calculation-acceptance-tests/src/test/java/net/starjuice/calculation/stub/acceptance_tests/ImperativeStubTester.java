@@ -1,13 +1,13 @@
 package net.starjuice.calculation.stub.acceptance_tests;
 
+import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
 import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
-import org.springframework.stereotype.Component;
 
 /**
  * Test that the acceptance tests are usable in the test suites of implementations.
  * Does not test an actual implementation!
  */
-@Component
+@AcceptanceTestComponent
 public class ImperativeStubTester implements ImperativeTestProvider {
     @Override
     public void make_a_calculator() {
@@ -15,6 +15,10 @@ public class ImperativeStubTester implements ImperativeTestProvider {
 
     @Override
     public void add_numbers(int a, int b) {
+    }
+
+    @Override
+    public void subtract_subtrahend_from_minuend(int subtrahend, int minuend) {
     }
 
     @Override
