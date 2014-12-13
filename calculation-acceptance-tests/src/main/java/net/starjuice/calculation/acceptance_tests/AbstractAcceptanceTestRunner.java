@@ -8,5 +8,5 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:net/starjuice/calculation/acceptance_tests"},
         glue = {"net.starjuice.calculation.acceptance_tests"})
-public abstract class AbstractCucumberRunner {
+public abstract class AbstractAcceptanceTestRunner {
 }
