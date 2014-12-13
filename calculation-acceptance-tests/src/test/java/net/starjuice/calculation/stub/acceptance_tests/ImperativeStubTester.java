@@ -4,7 +4,7 @@ import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StubTestProvider implements ImperativeTestProvider {
+public class ImperativeStubTester implements ImperativeTestProvider {
     @Override
     public void make_a_calculator() {
     }
