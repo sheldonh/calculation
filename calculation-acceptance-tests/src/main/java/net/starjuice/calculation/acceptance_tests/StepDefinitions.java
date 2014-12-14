@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- *  Glue code used by the {@link AbstractAcceptanceTestRunner} to match the steps of the human readable acceptance tests
+ *  Glue code used by the {@link DeclarativeAcceptanceTestRunner} to match the steps of the human readable acceptance tests
  *  to an imperative test provider.
  *
- *  The {@link AbstractAcceptanceTestRunner} is responsible for injecting an {@link ImperativeTestProvider} component
+ *  The {@link DeclarativeAcceptanceTestRunner} is responsible for injecting an {@link ImperativeTestProvider} component
  *  scanned from the solution implementer's test suite.
  */
 @Component

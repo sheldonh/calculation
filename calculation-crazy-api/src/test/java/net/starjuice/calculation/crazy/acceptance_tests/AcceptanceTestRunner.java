@@ -1,6 +1,6 @@
 package net.starjuice.calculation.crazy.acceptance_tests;
 
-import net.starjuice.calculation.acceptance_tests.AbstractAcceptanceTestRunner;
+import net.starjuice.calculation.acceptance_tests.DeclarativeAcceptanceTestRunner;
 
-public class AcceptanceTestRunner extends AbstractAcceptanceTestRunner {
+public class AcceptanceTestRunner extends DeclarativeAcceptanceTestRunner {
 }

@@ -4,7 +4,7 @@ package net.starjuice.calculation.acceptance_tests;
  * Each solution implementer's test suite should provide an implementation of this interface, defining how to fulfill
  * steps of the acceptance test suite against its solution.
  *
- * @see AbstractAcceptanceTestRunner
+ * @see DeclarativeAcceptanceTestRunner
  */
 public interface ImperativeTestProvider {
     void make_a_calculator();

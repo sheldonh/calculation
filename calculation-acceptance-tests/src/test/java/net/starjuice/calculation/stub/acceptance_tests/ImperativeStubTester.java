@@ -9,7 +9,7 @@ import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
  * In other words, test that the acceptance tests are usable in the test suites of implementations.
  * Does not test an actual implementation!
  *
- * @see net.starjuice.calculation.acceptance_tests.AbstractAcceptanceTestRunner
+ * @see net.starjuice.calculation.acceptance_tests.DeclarativeAcceptanceTestRunner
  */
 @AcceptanceTestComponent
 public class ImperativeStubTester implements ImperativeTestProvider {
