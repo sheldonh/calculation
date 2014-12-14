@@ -75,3 +75,9 @@ The following key files are of interest in verifying the claims above:
   * [calculation-acceptance-tests](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/pom.xml)
   * [calculation-api](https://github.com/sheldonh/calculation/blob/master/calculation-api/pom.xml)
   * [calculation-crazy-api](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/pom.xml)
+* Solultion implementation in which model components use Spring:
+  * [Context aware imperative test provider](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/ImperativeDependencyInjectedModelTester.java)
+  * [Injectable solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/Calculator.java)
+  * [Injected solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/Adder.java)
+  * [acceptanceTestContext.xml](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/resources/acceptanceTestContext.xml) configures model component scan
+  * [pom.xml](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/pom.xml) shows direct dependency on Spring
