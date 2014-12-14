@@ -4,8 +4,12 @@ import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
 import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
 
 /**
- * Test that the acceptance tests are usable in the test suites of implementations.
+ * Define how to apply the acceptance tests to a null solution.
+ *
+ * In other words, test that the acceptance tests are usable in the test suites of implementations.
  * Does not test an actual implementation!
+ *
+ * @see net.starjuice.calculation.acceptance_tests.AbstractAcceptanceTestRunner
  */
 @AcceptanceTestComponent
 public class ImperativeStubTester implements ImperativeTestProvider {

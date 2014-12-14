@@ -4,7 +4,16 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+/**
+ *  Glue code used by the {@link AbstractAcceptanceTestRunner} to match the steps of the human readable acceptance tests
+ *  to an imperative test provider.
+ *
+ *  The {@link AbstractAcceptanceTestRunner} is responsible for injecting an {@link ImperativeTestProvider} component
+ *  scanned from the solution implementer's test suite.
+ */
+@Component
 public class StepDefinitions {
 
     ImperativeTestProvider testProvider;
