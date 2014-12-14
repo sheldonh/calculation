@@ -1,7 +1,7 @@
-# Calculation
+# Decoupling acceptance tests from the interface of solution implementations
 
-This project demonstrates the strategy of providing acceptance tests as a separate package that can be used by multiple
-implementers.
+This project demonstrates a strategy for decoupling acceptance tests from the interface of solution implementations
+by fulfilling declarative acceptance tests with pluggable imperative test providers.
 
 ## The strategy
 
