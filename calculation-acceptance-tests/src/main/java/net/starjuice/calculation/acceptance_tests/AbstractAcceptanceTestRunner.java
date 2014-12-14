@@ -18,6 +18,11 @@ import org.junit.runner.RunWith;
  * Imperative test provider components are scanned from any package in the classpath that ends in
  * <code>acceptance_tests</code>, (as above). They must implement the {@link ImperativeTestProvider} interface and
  * should be tagged with the {@link AcceptanceTestComponent} annotation.
+ *
+ * Imperative test provider components are not required to be be <code>ApplicationContextAware</code>. However, if
+ * they are (for example if they test a solution that makes use of Spring dependency injection),
+ * and they use XML configuration, their configuration is expected to reside in <code>/acceptanceTextContext.xml</code>
+ * in the classpath. That constraint is defined in this package's <code>cucumber.xml</code>.
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
