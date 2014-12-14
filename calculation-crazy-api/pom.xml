@@ -20,6 +20,7 @@
             <artifactId>calculation-acceptance-tests</artifactId>
             <version>${project.version}</version>
             <classifier>classes</classifier>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
