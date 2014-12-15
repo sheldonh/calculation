@@ -28,7 +28,7 @@ This is ideal while we are still asking "Is this really the *what* we want?" and
 should deliver it?"
 
 Note, however, that this does not protect the value of a consistent solution model interface.
-As the interface of the solution model is explored and proven and increasingly becomes a dependency in system,
+As the interface of the solution model is explored and proven and increasingly becomes a dependency in the ecosystem,
 the value of freedom to explore diminishes, while the value of guaranteed interface conformance increases.
 This guarantee can be delivered in two steps, by
 
