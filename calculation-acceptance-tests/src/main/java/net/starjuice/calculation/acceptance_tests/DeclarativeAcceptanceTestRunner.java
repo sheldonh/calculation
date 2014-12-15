@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
  * from <code>net.starjuice.calculation.acceptance_tests</code>.
  *
  * Imperative test provider components are scanned from any subpackage of <code>net.starjuice.calculation</code> named
- * <code>acceptance_tests</code>, (as above). They must implement the {@link ImperativeTestProvider} interface and
+ * <code>acceptance_tests</code>, (as above). They must implement the {@link ImperativeTester} interface and
  * should be tagged with the {@link AcceptanceTestComponent} annotation.
  *
  * Imperative test provider components are not required to be be <code>ApplicationContextAware</code>. However, if

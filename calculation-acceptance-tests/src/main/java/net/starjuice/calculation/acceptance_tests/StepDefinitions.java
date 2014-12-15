@@ -9,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
  *  Glue code used by the {@link DeclarativeAcceptanceTestRunner} to match the steps of the human readable acceptance tests
  *  to an imperative test provider.
  *
- *  The {@link DeclarativeAcceptanceTestRunner} is responsible for injecting an {@link ImperativeTestProvider} component
+ *  The {@link DeclarativeAcceptanceTestRunner} is responsible for injecting an {@link ImperativeTester} component
  *  scanned from the solution implementer's test suite.
  */
 public class StepDefinitions {
 
-    ImperativeTestProvider testProvider;
+    ImperativeTester testProvider;
 
     @SuppressWarnings("SpringJavaAutowiredMembersInspection")
     @Autowired
-    public void setTestProvider(ImperativeTestProvider testProvider) {
+    public void setTestProvider(ImperativeTester testProvider) {
         this.testProvider = testProvider;
     }
 

@@ -1,12 +1,12 @@
 package net.starjuice.calculation.crazy.acceptance_tests;
 
 import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
-import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
+import net.starjuice.calculation.acceptance_tests.ImperativeTester;
 import net.starjuice.calculation.crazy.CrazyCalculator;
 import org.junit.Assert;
 
 @AcceptanceTestComponent
-public class ImperativeCrazyIdeaTestProvider implements ImperativeTestProvider {
+public class ImperativeCrazyIdeaTester implements ImperativeTester {
     private CrazyCalculator calculator;
 
     @Override

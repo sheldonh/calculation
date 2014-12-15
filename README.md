@@ -1,7 +1,7 @@
 # Decoupling acceptance tests from the interface of solution implementations
 
 This project demonstrates a strategy for decoupling acceptance tests from the interface of solution implementations
-by fulfilling declarative acceptance tests with pluggable imperative test providers.
+by fulfilling declarative acceptance tests with pluggable imperative testers.
 
 ## The strategy
 
@@ -10,13 +10,13 @@ acceptance tests that are written in business domain language and are agnostic t
 They define *what* to test without defining *how* to test it.
 
 The acceptance test package provides a test suite that would be fully executable if it were not missing one key
-component: an imperative test provider. An imperative test provider defines *how* to test a solution implementation.
+component: an imperative tester. An imperative tester defines *how* to test a solution implementation.
 
-Instead, the acceptance test package defines the *interface* of the imperative test provider, and provides a
+Instead, the acceptance test package defines the *interface* of the imperative tester, and provides a
 mechanism for an implementation of that interface to be injected into the acceptance tests.
 
 Thus, each solution implementation incorporates the acceptance test package into its test suite, plugging in
-an imperative test provider that understands how to exercise its own implementation of the solution.
+an imperative tester that understands how to exercise its own implementation of the solution.
 
 This strategy decouples the acceptance tests from the interface of the solution implementations, allowing them to be
 varied independently. This allows for the safe exploration of multiple implementation domains (*where* will this be
@@ -39,7 +39,7 @@ The demonstration project is a multi-module Maven build, which serves to clarify
 acceptance tests, not the other way around. Even that dependency is only in the test context.
 
 It is worth noticing that implementations are not even aware of the test framework used by the acceptance tests package
-(cucumber in this case). Although the acceptance tests package uses Spring to plug in the imperative test providers from
+(cucumber in this case). Although the acceptance tests package uses Spring to plug in the imperative testers from
 the test suites of solution implementations, implementers are not required to use Spring to decorate their implementation
 model components.
 
@@ -52,7 +52,7 @@ Thus, this strategy presents the following desirable dependency arrangements:
 
 That last arrangement highlights the major risk to realization of the value of the strategy: if acceptance tests are
 not expressed exclusively in business domain language and agnostic to the implementation domain, the interface of
-model components will bleed up into the interface of the imperative test provider. Then solution implementations can
+model components will bleed up into the interface of the imperative tester. Then solution implementations can
 no longer be varied independently.
 
 And so the Achilles heel of declarative acceptance tests remains the skill of the group defining the tests.
@@ -64,10 +64,10 @@ The following key files are of interest in verifying the claims above:
 * Declarative acceptance tests as human text:
   * [addition.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/features/addition.feature)
   * [subtraction.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/features/subtraction.feature)
-* [Glue code](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/java/net/starjuice/calculation/acceptance_tests/StepDefinitions.java) that maps the human text to pluggable imperative test providers.
-* Imperative test provider components supplied by solution implementations:
-  * [ImperativeApiTestProvider](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/test/java/net/starjuice/calculation/api/acceptance_tests/ImperativeApiTestProvider.java) in `calculation-api`
-  * [ImperativeCrazyIdeaTestProvider](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/ImperativeCrazyIdeaTestProvider.java) in `calculation-crazy-api`
+* [Glue code](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/java/net/starjuice/calculation/acceptance_tests/StepDefinitions.java) that maps the human text to pluggable imperative testers.
+* Imperative tester components supplied by solution implementations:
+  * [ImperativeApiTester](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/test/java/net/starjuice/calculation/api/acceptance_tests/ImperativeApiTester.java) in `calculation-api`
+  * [ImperativeCrazyIdeaTester](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/ImperativeCrazyIdeaTester.java) in `calculation-crazy-api`
 * Model components of the solution implementations:
   * [Calculator](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/main/java/net.starjuice.calculation.api/Calculator.java) in `calculation-api`
   * [CrazyCalculator](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/main/java/net.starjuice.calculation.crazy/CrazyCalculator.java) in `calculation-crazy-api`
@@ -76,7 +76,7 @@ The following key files are of interest in verifying the claims above:
   * [calculation-api](https://github.com/sheldonh/calculation/blob/master/calculation-api/pom.xml)
   * [calculation-crazy-api](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/pom.xml)
 * Solution implementation in which model components use Spring:
-  * [Context aware imperative test provider](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/ImperativeSpringModelTestProvider.java)
+  * [Context aware imperative tester](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/ImperativeSpringModelTester.java)
   * [Injectable solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/CompositeCalculator.java)
   * [Injected solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/Adder.java)
   * [acceptanceTestContext.xml](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/resources/acceptanceTestContext.xml) configures model component scan

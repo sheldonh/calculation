@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
- * Tags an {@link ImperativeTestProvider} as a component suitable for injection into the acceptance test's glue code
+ * Tags an {@link ImperativeTester} as a component suitable for injection into the acceptance test's glue code
  * (currently defined in {@link StepDefinitions}.
  *
  * Importantly, the lifecycle of the component will be bound to the scenario scope, avoiding problems arising from

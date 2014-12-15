@@ -1,7 +1,7 @@
 package net.starjuice.calculation.di.acceptance_tests;
 
 import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
-import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
+import net.starjuice.calculation.acceptance_tests.ImperativeTester;
 import net.starjuice.calculation.di.Calculator;
 import org.junit.Assert;
 import org.springframework.beans.BeansException;
@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 @AcceptanceTestComponent
-public class ImperativeSpringModelTestProvider implements ImperativeTestProvider, ApplicationContextAware {
+public class ImperativeSpringModelTester implements ImperativeTester, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     private Calculator calculator;

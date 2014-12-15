@@ -1,7 +1,7 @@
 package net.starjuice.calculation.stub.acceptance_tests;
 
 import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
-import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
+import net.starjuice.calculation.acceptance_tests.ImperativeTester;
 
 /**
  * Define how to apply the acceptance tests to a null solution.
@@ -12,7 +12,7 @@ import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
  * @see net.starjuice.calculation.acceptance_tests.DeclarativeAcceptanceTestRunner
  */
 @AcceptanceTestComponent
-public class ImperativeStubTestProvider implements ImperativeTestProvider {
+public class ImperativeStubTester implements ImperativeTester {
     @Override
     public void make_a_calculator() {
     }

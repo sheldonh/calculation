@@ -6,7 +6,7 @@ package net.starjuice.calculation.acceptance_tests;
  *
  * @see DeclarativeAcceptanceTestRunner
  */
-public interface ImperativeTestProvider {
+public interface ImperativeTester {
     void make_a_calculator();
 
     void make_calculator_add_two_numbers(int a, int b);
