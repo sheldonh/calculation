@@ -41,6 +41,9 @@ This guarantee can be delivered in two steps, by
 Thereafter, to enjoy the safety of the original strategy, changes to the model solution interface and implementation
 domain require either interface versioning or interface adapters that abstract the changes.
 
+However, solution interface conformance is not the goal of this strategy. It is only mentioned here to clarify that the
+strategy is not incompatible with this goal.
+
 ## The demonstration
 
 The strategy is demonstrated in a well understood problem domain (arithmetic), with solutions implemented in a simple
