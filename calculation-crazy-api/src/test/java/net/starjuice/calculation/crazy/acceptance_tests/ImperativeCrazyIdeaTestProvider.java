@@ -6,7 +6,7 @@ import net.starjuice.calculation.crazy.CrazyCalculator;
 import org.junit.Assert;
 
 @AcceptanceTestComponent
-public class ImperativeCrazyIdeaTester implements ImperativeTestProvider {
+public class ImperativeCrazyIdeaTestProvider implements ImperativeTestProvider {
     private CrazyCalculator calculator;
 
     @Override

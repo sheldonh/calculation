@@ -62,12 +62,12 @@ And so the Achilles heel of declarative acceptance tests remains the skill of th
 The following key files are of interest in verifying the claims above:
 
 * Declarative acceptance tests as human text:
-  * [addition.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/net/starjuice/calculation/acceptance_tests/addition.feature)
-  * [subtraction.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/net/starjuice/calculation/acceptance_tests/subtraction.feature)
+  * [addition.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/features/addition.feature)
+  * [subtraction.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/features/subtraction.feature)
 * [Glue code](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/java/net/starjuice/calculation/acceptance_tests/StepDefinitions.java) that maps the human text to pluggable imperative test providers.
 * Imperative test provider components supplied by solution implementations:
-  * [ImperativeApiTester](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/test/java/net/starjuice/calculation/api/acceptance_tests/ImperativeApiTester.java) in `calculation-api`
-  * [ImperativeCrazyIdeaTester](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/ImperativeCrazyIdeaTester.java) in `calculation-crazy-api`
+  * [ApiAcceptanceTest](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/test/java/net/starjuice/calculation/api/acceptance_tests/ApiAcceptanceTest.java) in `calculation-api`
+  * [CrazyIdeaAcceptanceTest](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/CrazyIdeaAcceptanceTest.java) in `calculation-crazy-api`
 * Model components of the solution implementations:
   * [Calculator](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/main/java/net.starjuice.calculation.api/Calculator.java) in `calculation-api`
   * [CrazyCalculator](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/main/java/net.starjuice.calculation.crazy/CrazyCalculator.java) in `calculation-crazy-api`
@@ -76,7 +76,7 @@ The following key files are of interest in verifying the claims above:
   * [calculation-api](https://github.com/sheldonh/calculation/blob/master/calculation-api/pom.xml)
   * [calculation-crazy-api](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/pom.xml)
 * Solution implementation in which model components use Spring:
-  * [Context aware imperative test provider](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/ImperativeDependencyInjectedModelTester.java)
+  * [Context aware imperative test provider](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/SpringModelAcceptanceTest.java)
   * [Injectable solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/Calculator.java)
   * [Injected solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/Adder.java)
   * [acceptanceTestContext.xml](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/resources/acceptanceTestContext.xml) configures model component scan

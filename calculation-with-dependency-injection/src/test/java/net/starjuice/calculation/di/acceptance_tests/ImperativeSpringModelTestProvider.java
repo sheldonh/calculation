@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 @AcceptanceTestComponent
-public class ImperativeDependencyInjectedModelTester implements ImperativeTestProvider, ApplicationContextAware {
+public class ImperativeSpringModelTestProvider implements ImperativeTestProvider, ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     private Calculator calculator;

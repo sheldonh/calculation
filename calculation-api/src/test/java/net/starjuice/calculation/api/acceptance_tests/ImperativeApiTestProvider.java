@@ -6,7 +6,7 @@ import net.starjuice.calculation.api.Calculator;
 import org.junit.Assert;
 
 @AcceptanceTestComponent
-public class ImperativeApiTester implements ImperativeTestProvider {
+public class ImperativeApiTestProvider implements ImperativeTestProvider {
     private Calculator calculator;
     private int actual;
 

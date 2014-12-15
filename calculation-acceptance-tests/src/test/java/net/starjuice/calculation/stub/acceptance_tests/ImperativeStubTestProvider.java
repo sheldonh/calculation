@@ -12,7 +12,7 @@ import net.starjuice.calculation.acceptance_tests.ImperativeTestProvider;
  * @see net.starjuice.calculation.acceptance_tests.DeclarativeAcceptanceTestRunner
  */
 @AcceptanceTestComponent
-public class ImperativeStubTester implements ImperativeTestProvider {
+public class ImperativeStubTestProvider implements ImperativeTestProvider {
     @Override
     public void make_a_calculator() {
     }
