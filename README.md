@@ -3,6 +3,8 @@
 This project demonstrates a strategy for decoupling acceptance tests from the interface of solution implementations
 by fulfilling declarative acceptance tests with pluggable imperative testers.
 
+![Class diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/class-uml.png)
+
 ## The strategy
 
 With this strategy, the acceptance tests package provides declarative acceptance tests; that is,
