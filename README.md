@@ -22,6 +22,24 @@ This strategy decouples the acceptance tests from the interface of the solution 
 varied independently. This allows for the safe exploration of multiple implementation domains (*where* will this be
 implemented?) and multiple implementation interfaces (*how* will it be used?).
 
+While the solution model is unproven, this provides maximum flexibility to explore safely, both the interface of the
+solution and the implementation domain in which it is delivered.
+This is ideal while we are still asking "Is this really the *what* we want?" and not just "Is this really *how* we
+should deliver it?"
+
+Note, however, that this does not protect the value of a consistent solution model interface.
+As the interface of the solution model is explored and proven and increasingly becomes a dependency in system,
+the value of freedom to explore diminishes, while the value of guaranteed interface conformance increases.
+This guarantee can be delivered in two steps, by
+
+* extracting the solution model interface into a package that the test package and solution implementation packages
+  depend on, and
+* providing a single imperative tester in the test package, removing the freedom to define the solution model interface
+  from implementation packages.
+
+Thereafter, to enjoy the safety of the original strategy, changes to the model solution interface and implementation
+domain require either interface versioning or interface adapters that abstract the changes.
+
 ## The demonstration
 
 The strategy is demonstrated in a well understood problem domain (arithmetic), with solutions implemented in a simple
