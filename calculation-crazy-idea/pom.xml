@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>calculation-crazy-api</artifactId>
+    <artifactId>calculation-crazy-idea</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
