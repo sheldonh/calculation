@@ -53,7 +53,7 @@ Indeed, for two solutions in the same implementation domain and in this particul
 Even so, the demonstration project shows how two very different APIs can be explored independently without disruption
 of the acceptance tests, because the acceptance tests are decoupled from the interface of the solution implementations.
 Surely, nobody designing the acceptance tests could have predicted that a developer would try to implement the
-`calculation-crazy-api` solution, which incurs all the complexity of a state machine without any of the benefit of
+`calculation-crazy-idea` solution, which incurs all the complexity of a state machine without any of the benefit of
 a reverse polish calculator. Nevertheless, it serves to highlight the extent to which completely different and highly
 incompatible solution implementation interfaces can be safely explored completely independently of each other.
 
@@ -88,15 +88,15 @@ The following key files are of interest in verifying the claims above:
   * [subtraction.feature](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/resources/features/subtraction.feature)
 * [Glue code](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/src/main/java/net/starjuice/calculation/acceptance_tests/StepDefinitions.java) that maps the human text to pluggable imperative testers.
 * Imperative tester components supplied by solution implementations:
-  * [ImperativeApiTester](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/test/java/net/starjuice/calculation/api/acceptance_tests/ImperativeApiTester.java) in `calculation-api`
-  * [ImperativeCrazyIdeaTester](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/ImperativeCrazyIdeaTester.java) in `calculation-crazy-api`
+  * [ImperativePojoTester](https://github.com/sheldonh/calculation/blob/master/calculation-pojo/src/test/java/net/starjuice/calculation/pojo/acceptance_tests/ImperativePojoTester.java) in `calculation-pojo`
+  * [ImperativeCrazyIdeaTester](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-idea/src/test/java/net/starjuice/calculation/crazy/acceptance_tests/ImperativeCrazyIdeaTester.java) in `calculation-crazy-idea`
 * Model components of the solution implementations:
-  * [Calculator](https://github.com/sheldonh/calculation/blob/master/calculation-api/src/main/java/net.starjuice.calculation.api/Calculator.java) in `calculation-api`
-  * [CrazyCalculator](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/src/main/java/net.starjuice.calculation.crazy/CrazyCalculator.java) in `calculation-crazy-api`
+  * [Calculator](https://github.com/sheldonh/calculation/blob/master/calculation-pojo/src/main/java/net.starjuice.calculation.pojo/Calculator.java) in `calculation-pojo`
+  * [CrazyCalculator](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-idea/src/main/java/net.starjuice.calculation.crazy/CrazyCalculator.java) in `calculation-crazy-idea`
 * Project Object Model files that describe package dependencies:
   * [calculation-acceptance-tests](https://github.com/sheldonh/calculation/blob/master/calculation-acceptance-tests/pom.xml)
-  * [calculation-api](https://github.com/sheldonh/calculation/blob/master/calculation-api/pom.xml)
-  * [calculation-crazy-api](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-api/pom.xml)
+  * [calculation-pojo](https://github.com/sheldonh/calculation/blob/master/calculation-pojo/pom.xml)
+  * [calculation-crazy-idea](https://github.com/sheldonh/calculation/blob/master/calculation-crazy-idea/pom.xml)
 * Solution implementation in which model components use Spring:
   * [Context aware imperative tester](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/test/java/net/starjuice/calculation/di/acceptance_tests/ImperativeSpringModelTester.java)
   * [Injectable solution model component](https://github.com/sheldonh/calculation/blob/master/calculation-with-dependency-injection/src/main/java/net.starjuice.calculation.di/CompositeCalculator.java)
