@@ -3,15 +3,14 @@
 This project demonstrates a strategy for decoupling acceptance tests from the interface of solution implementations
 by fulfilling declarative acceptance tests with pluggable imperative testers.
 
-![Class diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/class-uml.png)
-
 ## The strategy
 
 With this strategy, the acceptance tests package provides declarative acceptance tests; that is,
 acceptance tests that are written in business domain language and are agnostic to the implementation domain.
 They define *what* to test without defining *how* to test it.
 
-![Package diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/package-uml.png)
+![Package Diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/package-uml.png)
+_Figure 1: Package Diagram_
 
 The acceptance test package provides a test suite that would be fully executable if it were not missing one key
 component: an imperative tester. An imperative tester defines *how* to test a solution implementation.
@@ -53,6 +52,9 @@ strategy is not incompatible with this goal.
 The strategy is demonstrated in a well understood problem domain (arithmetic), with solutions implemented in a simple
 implementation domain (plain Java objects). This runs the risk of having the strategy labelled as over-engineering.
 Indeed, for two solutions in the same implementation domain and in this particular problem domain, it is!
+
+![Class diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/class-uml.png)
+_Figure 2: Class diagram_
 
 Even so, the demonstration project shows how two very different APIs can be explored independently without disruption
 of the acceptance tests, because the acceptance tests are decoupled from the interface of the solution implementations.
