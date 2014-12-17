@@ -31,6 +31,8 @@ This is ideal while we are still asking "Is this really the *what* we want?" and
 should deliver it?"
 
 Note, however, that this does not protect the value of a consistent solution model interface.
+Solution interface conformance is not the goal of this strategy, but will be given sufficient treatment here to clarify
+that the strategy is not incompatible with this goal.
 
 As the interface of the solution model is explored and proven and increasingly becomes a dependency in the ecosystem,
 the value of freedom to explore diminishes, while the value of guaranteed interface conformance increases.
@@ -44,8 +46,14 @@ This guarantee can be delivered in two steps, by
 Thereafter, to enjoy the safety of the original strategy, changes to the model solution interface and implementation
 domain require either interface versioning or interface adapters that abstract the changes.
 
-However, solution interface conformance is not the goal of this strategy. It is only mentioned here to clarify that the
-strategy is not incompatible with this goal.
+Interface conformance could be guaranteed in this way from the outset, and this demonstration does not highlight the
+cost of this decision. Because this demonstration's solution implementations are all delivered into the same
+implementation domain (library code), there appears to be no cost to enforcing a solution model API up front.
+But consider what would happen if a solution were explored in a different implementation domain (e.g. web service):
+maintaining an an interface adapter that abstracts the differences between the two implementation domains is entirely
+feasible, but increases the cost of exploration. While nothing in the ecosystem depends on the solution models, the
+there is no return on this investment. Furthermore, when the investment becomes attractive, only the imperative
+test providers of adapted solution models must change; the acceptance test package remains stable.
 
 ## The demonstration
 
