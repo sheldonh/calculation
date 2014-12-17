@@ -13,6 +13,7 @@
         <module>calculation-acceptance-tests</module>
         <module>calculation-pojo</module>
         <module>calculation-crazy-idea</module>
+        <module>calculation-web</module>
         <module>calculation-with-dependency-injection</module>
     </modules>
 
