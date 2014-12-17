@@ -1,4 +1,4 @@
-package net.starjuice.calculation.api;
+package net.starjuice.calculation.pojo;
 
 public class Calculator {
     public int add(int a, int b) {

@@ -1,12 +1,12 @@
-package net.starjuice.calculation.api.acceptance_tests;
+package net.starjuice.calculation.pojo.acceptance_tests;
 
 import net.starjuice.calculation.acceptance_tests.AcceptanceTestComponent;
 import net.starjuice.calculation.acceptance_tests.ImperativeTester;
-import net.starjuice.calculation.api.Calculator;
+import net.starjuice.calculation.pojo.Calculator;
 import org.junit.Assert;
 
 @AcceptanceTestComponent
-public class ImperativeApiTester implements ImperativeTester {
+public class ImperativePojoTester implements ImperativeTester {
     private Calculator calculator;
     private int actual;
 
