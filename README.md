@@ -11,6 +11,8 @@ With this strategy, the acceptance tests package provides declarative acceptance
 acceptance tests that are written in business domain language and are agnostic to the implementation domain.
 They define *what* to test without defining *how* to test it.
 
+![Package diagram](https://raw.githubusercontent.com/sheldonh/calculation/master/package-uml.png)
+
 The acceptance test package provides a test suite that would be fully executable if it were not missing one key
 component: an imperative tester. An imperative tester defines *how* to test a solution implementation.
 
