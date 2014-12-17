@@ -44,7 +44,7 @@ This guarantee can be delivered in two steps, by
   from implementation packages.
 
 Thereafter, to enjoy the safety of the original strategy, changes to the model solution interface and implementation
-domain require either interface versioning or interface adapters that abstract the changes.
+domain require interface versioning and/or interface adapters that abstract over implementation domain differences.
 
 Interface conformance could be guaranteed in this way from the outset, and this demonstration does not highlight the
 cost of this decision. Because this demonstration's solution implementations are all delivered into the same
